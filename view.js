@@ -1,6 +1,8 @@
 class View {
     constructor() {
         this.btnGetApi = document.querySelector("#btnGetApi");
+        this.outputPosts = document.querySelector("#outputPosts");
+
 
         this.getApi();
     }
@@ -19,10 +21,11 @@ class View {
 
                     rates.forEach(rate => {
                         output += `
-                            <h3> rate: ${data.rates[rate].name}</h3>
-                            <h3> rate: ${data.rates[rate].rate}</h3>
+                            <h3>name: ${data.rates[rate].name}</h3>
+                            <h3>rate: ${data.rates[rate].rate}</h3>
                             `
                     });
+
                     this.outputPosts.innerHTML = output;
 
 
